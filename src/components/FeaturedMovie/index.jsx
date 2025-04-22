@@ -7,7 +7,7 @@ export function FeaturedMovie({item}){
 		<section className="featured" style={{backgroundImage: `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`}}>
 			<div className='styleImgVertical'>
 				<div className="styleImghorizontal">
-					<h1>{item.original_name}</h1>
+					<h1>{item.title || item.name}</h1>
 					<p>{item.overview}</p>
 					<div className="buttons">
 						<a href={`watch/${item.id}`} className='buttonWatch'>▶ Assistir</a>

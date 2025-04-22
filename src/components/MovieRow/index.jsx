@@ -1,12 +1,16 @@
 import './style.scss';
 import React, { useState } from 'react';
+import { Card } from '../Card';
+import { Modal } from '../Modal';
 
+// import { MagicMotion }
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 // Lista os filmes de acordo com o título
 export function MovieRow({title, items}){
 
+	const [selectdMovie, setSelectdMovie] = useState(null); // modal
 	const [scrollX, setScrollX] = useState(0); // Para controlar a rolagem dos filmes
 
 	const handLeftArrow = () => {
@@ -28,6 +32,10 @@ export function MovieRow({title, items}){
 		setScrollX(x);
 	}
 
+	// Modal
+	const handleOpenModal = (items) => { setSelectdMovie(items) } // Abrir
+	const handleCloseModal = () => { setSelectdMovie(null) } // Fechar
+
 	return (
 		<div className="movieRow">
 			<h2>{title}</h2>
@@ -37,17 +45,8 @@ export function MovieRow({title, items}){
 			<div className="right" onClick={handRightArrow}>
 				<NavigateNextIcon style={{fontSize: 50}} />
 			</div>
-			<div className="container">
-				<div className="listRow" style={{
-					marginLeft: scrollX,
-					width: items.results.length * 300}}>
-					{items.results.length > 0 && items.results.map((item, key) => (
-						<div key={key} className="item">
-							<img src={`https://image.tmdb.org/t/p/w300${item.backdrop_path}`} alt={item.original_title} />
-						</div>
-					))}
-				</div>
-			</div>
+			<Card items={items} scrollX={scrollX} onOpenModal={handleOpenModal}/>
+			{selectdMovie && (<Modal movie={selectdMovie} onClose={handleCloseModal} />)}
 		</div>
 	);
 }

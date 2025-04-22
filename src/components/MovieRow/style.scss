@@ -27,31 +27,6 @@
 	.right{
 		right: 0;
 	}
-
-	.container{
-		overflow-x: hidden;
-		padding-left: 2rem;
-
-		.listRow{
-			transition: all ease 0.5s;
-
-			.item{
-				display: inline-block;
-				width: 15vw;
-				cursor: pointer;
-
-				img{
-					width: 100%;
-					transform: scale(0.9);
-					transition: all ease 0.2s;
-				}
-
-				img:hover{
-					transform: scale(1);
-				}
-			}
-		}
-	}
 }
 
 .movieRow:hover .left, 
