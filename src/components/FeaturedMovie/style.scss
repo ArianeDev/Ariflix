@@ -1,0 +1,76 @@
+$colorGray: rgb(17,17,17);
+$colorLightGray: #999;
+$colorBlack: #000;
+$colorWhite: rgb(255,255,255);
+
+.featured{
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+
+	.styleImgVertical, .styleImghorizontal{
+		width: inherit;
+		height: inherit;
+	}
+	
+	.styleImgVertical{
+		background: linear-gradient(to top, $colorGray 10%, transparent 90%);
+	}
+	
+	.styleImghorizontal{
+		background: linear-gradient(to right, $colorGray 30%, transparent 70%);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-left: 3rem;
+		padding-bottom: 20vh;
+		padding-top: 10vh;
+
+		h1{
+			font-size: 60px;
+			font-weight: bold;
+			max-width: 40%;
+		}
+
+		p{
+			margin-top: 0.5rem;
+			font-size: 20px;
+			color: $colorLightGray;
+			max-width: 40%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			-webkit-line-clamp: 3; // Quantidade de linhas
+			-webkit-box-orient: vertical;
+		}
+
+		.buttons{
+			margin: 2rem 0;
+			
+			.buttonWatch, .buttonMylist{
+				text-decoration: none;
+				border-radius: 0.3rem;
+				font-weight: 500;
+				padding: 0.5rem 1rem;
+				opacity: 1;
+				transition: all ease 0.2s;
+			}
+			:hover{
+				opacity: 0.6;
+			}
+			
+			.buttonWatch{
+				background-color: $colorWhite;
+				color: $colorBlack;
+			}
+			
+			.buttonMylist{
+				background-color: rgb(74, 74, 74);
+				color: $colorWhite;
+				margin-left: 1rem;
+			}
+
+		}
+	}
+}
