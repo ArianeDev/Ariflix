@@ -10,7 +10,6 @@ export function Card({items, scrollX, onOpenModal}){
 					{items.results.length > 0 && items.results.map((item, key) => (
 						<div key={key} className="item">
 							<img src={`https://image.tmdb.org/t/p/w300${item.backdrop_path}`} alt={item.original_title} onClick={() => onOpenModal(item)}/>
-
 						</div>
 					))}
 				</div>

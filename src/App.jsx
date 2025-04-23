@@ -1,9 +1,12 @@
 import React from "react";
-import { Main } from "./pages/Home";
+import { Rotas } from "./Rotas";
+import { BrowserRouter } from "react-router-dom";
 
 function App(){
     return(
-      <Main />
+      <BrowserRouter>
+        <Rotas />
+      </BrowserRouter>
     )
 }
 
