@@ -28,7 +28,6 @@ export function MovieRow({title, items}){
 		if((window.innerWidth - listW) > x){
 			x = (window.innerWidth - (listW - 170))
 		}
-
 		setScrollX(x);
 	}
 

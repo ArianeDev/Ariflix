@@ -24,7 +24,7 @@ export function Conteudo({type}) {
             }
     
             loadAll();
-        }, []);
+        }, [type]); // mudei isso aqui
 
     return (
         <>

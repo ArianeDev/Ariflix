@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
 import response from '../../services/api';
+import { MovieRow } from "../MovieRow";
 
 export function ListFavorite() {
-    const [listFavorite, setlistFavorite] = useState(null);
+    const [listFavorite, setlistFavorite] = useState([]);
     
     useEffect(() => {
         const loadAll = async () => {
@@ -17,15 +18,18 @@ export function ListFavorite() {
             }
             
             setlistFavorite(listMovie);
-            console.log(listMovie)
         }
 
         loadAll();
     }, []);
+    
+    console.log("listFavorite", listFavorite)
 
     return(
-        <>
-            {listFavorite}
-        </>
+        <section className="lists">
+            {listFavorite.map((item, key) => (
+                <MovieRow key={key} title={item.title} items={item.items} />
+            ))}
+        </section>
     )
 }
