@@ -14,7 +14,7 @@ export function ListFavorite() {
                 let randomChosen = Math.floor(Math.random() * (list[0].items.results.length - 1));
                 let chosen = list[0].items.results[randomChosen];
 
-                listMovie.push(chosen)
+                listMovie.push(chosen.name)
             }
             
             setlistFavorite(listMovie);
@@ -28,7 +28,7 @@ export function ListFavorite() {
     return(
         <section className="lists">
             {listFavorite.map((item, key) => (
-                <MovieRow key={key} title={item.title} items={item.items} />
+                <MovieRow key={key} title="Favoritos" items={listFavorite} />
             ))}
         </section>
     )
