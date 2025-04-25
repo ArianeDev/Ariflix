@@ -1,9 +1,10 @@
-import { ListFavorite } from '../../components/ListFavorite';
+import { InfoPerfil } from '../../components/InfoPerfil' 
+import './style.scss'
 
 export function User() {
     return (
-        <div className="page">
-            <ListFavorite />
+        <div className="pageInfo">
+            <InfoPerfil />
         </div>
     );
 }
