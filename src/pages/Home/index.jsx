@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { Header } from "../../components/Header";
+import { Footer } from "../../components/Footer";
 import { Outlet } from "react-router-dom";
 import './style.scss'
 
@@ -27,7 +28,8 @@ export function Home(){
 	return(
 		<div className="page">
 			<Header black={blackHeader} />			
-			<Outlet />			
+			<Outlet />	
+			<Footer />		
 		</div>
 	)
 }
